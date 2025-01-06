@@ -6,11 +6,11 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 
 const defaultTodos = [
-  { text: 'Cortar cebolla', completed: true },
+  { text: 'Estudiar ingles Martes y viernes', completed: true },
   { text: 'Tomar el Curso de Intro a React.js', completed: false },
-  { text: 'Llorar con la Llorona', completed: false },
-  { text: 'LALALALALA', completed: false },
-  { text: 'Usar estados derivados', completed: true },
+  { text: 'Tomar el curso de next', completed: false },
+  { text: 'Estudiar italiano lunes y miercoles', completed: false },
+  { text: 'Hacer videos', completed: true },
 ];
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
-      (todo) => todo.text == text
+      (todo) => todo.text === text
     );
     newTodos[todoIndex].completed = true;
     setTodos(newTodos);
@@ -42,7 +42,7 @@ function App() {
   const deleteTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
-      (todo) => todo.text == text
+      (todo) => todo.text === text
     );
     newTodos.splice(todoIndex, 1);
     setTodos(newTodos);
